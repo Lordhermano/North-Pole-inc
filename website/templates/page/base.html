@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santas Land</title>
+</head>
+<body>
+   {% include 'page/nav_bar.html' %} 
+   {% block weather %}
+   {% endblock %} 
+
+        {% block content %}
+        {% endblock %}   
+        <footer>
+        <div class="footer mt-5 bg-primary bottom" >
+            <p>Terms and Conditions</p>
+        </div>   
+        </footer> 
+
+      
+</body>
+
+<script src="{% static 'js/bootstrap.js' %}"></script>
+</html>

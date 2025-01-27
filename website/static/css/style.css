@@ -1,0 +1,193 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+/* if content too small  */
+
+body{
+    background-image: url("../images/the-christmas-tree.jpg");
+    background-repeat: no-repeat;
+    background-image: -moz-linear-gradient();
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+
+
+}
+.row{
+    width: 100vw;
+}
+.intchoice{
+
+    width: 50px;
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.col{
+    width: 100%;
+   
+}
+
+.backdrop{
+    background-color: aliceblue;
+    margin: 0px;
+    max-width: 100vw;
+    min-height: 600px;
+    color: aliceblue;
+    
+}
+
+
+.lapland{
+    position: absolute;
+    left: 20rem;
+}
+.santas_workshop{
+
+    position: absolute;
+    left: 1rem;
+}
+.reindeer_trip{
+
+    position: absolute;
+    left: 39rem;
+
+}
+
+.register{
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 500px;
+    min-height: 600px;
+    background-color: #CBDCCB;
+    padding: 20px 50px 20px  50px;
+    border-radius: 30px;
+}
+.auth_login{
+    position: absolute;
+    right:100px;
+}
+.auth_reg{
+    position: absolute;
+    right:150px;
+}
+/* Every form will involve a label and input */
+.Login{
+    justify-content: center;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 500px;
+    height: 600px;
+    background-color: #CBDCCB;
+    padding: 20px 50px 20px  50px;
+    border-radius: 30px;
+}
+
+label{
+    display: block;
+}
+label{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* The booking forms */
+
+label[for="id_adult"]{
+    justify-content: center;
+    margin-left: 11rem;
+    margin-top: 5%;
+    border-radius: 10px;
+    
+}
+#id_adult{
+    justify-content: center;
+    margin-left: 11rem;
+    margin-top: 5%;
+    border-radius: 10px;
+   
+}
+label[for="id_children"]{
+    justify-content: center;
+    margin-left: 11rem;
+    margin-top: 5%;
+    border-radius: 10px;
+    
+}
+#id_children{
+    justify-content: center;
+    margin-left: 11rem;
+    margin-top: 5%;
+    border-radius: 10px;
+    
+}
+label[for="id_infants"]{
+    justify-content: center;
+    margin-left: 11rem;
+    margin-top: 5%;
+    border-radius: 10px;
+    
+}
+#id_infants{
+    justify-content: center;
+    margin-left: 11rem;
+    margin-top: 5%;
+    border-radius: 10px;
+    
+}
+/* Buttons in a form will use this */
+.submit{
+    justify-content: center;
+    margin-left: 11rem;
+    margin-top: 5%;
+    background-color: #04AA6D;
+    border-radius: 10px;
+    color: aliceblue;
+}
+.btn{
+    position: absolute;
+    left:45%;
+    top:90%;
+}
+
+
+/* Booking page  */
+.pricing{
+    position: relative;
+    background-image: url( '../images/ticket.png');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    margin-top: 20px;
+    padding: 20px;
+    height: 200px;
+    width: 400px;    
+}
+.wcontent{
+    width:380px;
+}
+img.weather_icons{
+    width: 80px;
+    height: 80px;
+}
+.center{
+    justify-items: center;
+    width: 50%;
+    margin-left: 0px;
+    margin-right: 0px ;
+}

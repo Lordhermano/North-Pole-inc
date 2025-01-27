@@ -1,0 +1,48 @@
+{% extends 'page/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block weather %}
+<div class="d-flex justify-content-center"   >
+
+  {% for daily in data %}
+  <div class="card h-100 mx-2 flex-sm-fill wcontent">
+      <p class="center">{{daily.day}}</p>
+      <img src="../static/images/{{daily.icon}}.png" class="weather_icons">
+      <p>Temp : {{daily.avg_temp}} C</p>
+      <p>Feels Like : {{daily.feels_like}} C</p>
+      
+  </div> 
+  {% endfor %}    
+
+</div>
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+<div class="backdrop d-flex">
+
+  
+  <div class="row">
+        {% for dests in dest1 %}
+        <div class="col">
+            <div class="card h-100 p-5 justify-content-center wcontent"><h1>{{dests.name}}</h1>
+              <img src="{{dests.img.url}}" class="center" alt="" style="width: 200px; height: 200px; ">
+              <hr>
+              <p>{{dests.desc}}</p>
+              <form action='book' method="post">
+                {% csrf_token %}
+                <input type="text" name="interface" value="{{dests.id}}" hidden>
+                <input type="submit" class="btn btn-primary" name="Book" value='Book'>
+              </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}  

@@ -1,0 +1,15 @@
+{% extends 'page/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action="" method="post">
+    <div class="Login">
+        {% csrf_token %}
+        {% crispy form %}
+        {% for message in messages %}
+        <p>{{message}}</p>
+        {% endfor %}
+        <input type="submit" name="Login" value="Login" class="submit">
+    </div>
+</form>
+
+{% endblock %}
