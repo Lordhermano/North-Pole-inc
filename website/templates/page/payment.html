@@ -1,5 +1,9 @@
 {% extends 'page/base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
 
-<h1>hygf</h1>
+    <div class="card">
+        {{ form|crispy }}
+        <input type="submit" class="submit" name="" id="">
+    </div>    
 {% endblock %}

@@ -4,7 +4,7 @@ from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import Register,Login,Bookings
+from .forms import Register,Login,Bookings,PaymentForm
 from .models import Createaccount,Destination
 
 import requests,datetime
@@ -81,13 +81,15 @@ def display_cards(request):
 # booking page with all models and forms
 @login_required(login_url='login')
 def book(request):
-    id = request.POST.get('interface')
-    id = int(id)
-    trips = Destination.objects.all()
-    context = {'forms':Bookings(),'trip':trips,'product':id}
+    id = int(request.POST.get('interface'))
+    forms = Bookings()
+    trips = Destination.objects.get(id=id)
+    context = {'forms':forms,'dest':trips,'product':id}
+    
     return render(request,'page/bookings.html',context)
 
 # Payment page with the models and forms
-@login_required(login_url='login')
 def pay(request):
-    return render(request,"page/payment.html")
+    form = PaymentForm()
+    context = {'form':form}
+    return render(request,"page/payment.html", context)

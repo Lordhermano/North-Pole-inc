@@ -4,8 +4,7 @@
 
 
 {% block content %}
-    {% for dest in trip %}
-        {% if dest.id == product %}
+    
         <h1 style="color: cadetblue;">{{dest.name}}</h1>
         <img src="{{dest.img.url}}" alt="" >
         <div class="pricing">
@@ -17,17 +16,19 @@
                 let child_prices = {{dest.child_price}};
             </script>
         </div>       
-        {% endif %}
-     
-    {% endfor %}    
+   
 <div class="intchoice">
 
-<form action="pay" method="post">
+<form action='pay' method="post">
     {% csrf_token %}
-    {% crispy forms %}
+    {{ forms|crispy }}
   
+
+    <h1 id="final" >0</h1>
+    <input type="submit" class="submit" name="Book" value='Book'>
+</form>    
 <script>
-        // Get references to the input fields
+    // Get references to the input fields
 const adultInput = document.getElementById('id_adult');
 const childrenInput = document.getElementById('id_children');
 const infantsInput = document.getElementById('id_infants');
@@ -38,17 +39,12 @@ childrenInput.addEventListener('input', updateValues);
 infantsInput.addEventListener('input', updateValues);
 
 function updateValues() {
-    const adults = adultInput.value || 0; // Fallback to 0 if empty
-    const children = childrenInput.value || 0;
-    const infants = infantsInput.value || 0;
-    document.getElementById("final").innerHTML = adult_prices*adults + child_prices*children;
+const adults = adultInput.value || 0; // Fallback to 0 if empty
+const children = childrenInput.value || 0;
+const infants = infantsInput.value || 0;
+document.getElementById("final").innerHTML = adult_prices*adults + child_prices*children;
 }
-    </script>
-    <h1 id="final" >0</h1>
-    <input type="text" name="interface" value="9" hidden>
-    <input type="submit" value="pay" name="pay" class="submit">
-</form>    
-
+</script>
 
 </div>
 {% endblock %}

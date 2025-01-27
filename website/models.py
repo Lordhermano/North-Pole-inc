@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager,PermissionsMixin
+from creditcards.models import CardNumberField, CardExpiryField, SecurityCodeField
+
+
 
 class CustomUserManager(BaseUserManager):
     def _create_user(self, email, password, **extra_fields):
@@ -69,3 +72,8 @@ class Destination(models.Model):
      adult_price = models.IntegerField()
      child_price = models.IntegerField()
      infant_price = models.IntegerField()          
+
+class Payment(models.Model):
+    cc_number = CardNumberField(('card number'))
+    cc_expiry = CardExpiryField(('expiration date'))
+    cc_code = SecurityCodeField(('security code'))
