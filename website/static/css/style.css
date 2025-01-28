@@ -48,14 +48,19 @@ body{
     margin: 10px;
     max-width: 100vw;
     min-height: 600px;
-    color: aliceblue;
-    
+    color: aliceblue;    
+    border-radius: 20px;
 }
-
+/* The Gap between content and footer */
+.seperator{
+    width: 100vw;
+    height: 50px;
+}
 
 .lapland{
     position: absolute;
     left: 20rem;
+    
 }
 .santas_workshop{
 
@@ -221,9 +226,9 @@ img.weather_icons{
  }
 
  /* payment card */
-.card{
+.payment{
     width: 40%;
     left: 50vw;
-    right: 50vw;
+    top: 20vh;
 
 }
